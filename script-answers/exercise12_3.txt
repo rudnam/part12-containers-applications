@@ -1,0 +1,15 @@
+Script started on 2023-08-07 14:09:15+08:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="146" LINES="34"]
+
+
+~														 root@LAPTOP-5OT1443K 02:09:15 PM
+❯ 7;file://LAPTOP-5OT1443K/root#
+~												         system root@LAPTOP-5OT1443K 02:09:15 PM
+❯ docker start -i pedantic_elgamal
+root@71f58862caed:/# nano /usr/src/app/index.js
+root@71f58862caed:/#cexit/src/app/index.jsBTB[BWriting...t]BBBBB[BWroteo1iline ]B-EBMRedoBM-6BMCopyB^QBMWhere Was-]B To Bracket
+exit
+7;file://LAPTOP-5OT1443K/root
+~												   25s   system root@LAPTOP-5OT1443K 02:09:44 PM
+❯ exit
+
+Script done on 2023-08-07 14:09:45+08:00 [COMMAND_EXIT_CODE="0"]
