@@ -1,0 +1,16 @@
+Script started on 2023-08-07 13:36:21+08:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="146" LINES="34"]
+
+
+~														 root@LAPTOP-5OT1443K 01:36:21 PM
+❯ 7;file://LAPTOP-5OT1443K/root#
+~												         system root@LAPTOP-5OT1443K 01:36:21 PM
+❯ docker run -it ubuntu bashdocker run -it ubuntu bash
+root@7d0deb444172:/# mkdir /usr/src/app
+root@7d0deb444172:/# touch /usr/src/app/index.js
+root@7d0deb444172:/# exit
+exit
+7;file://LAPTOP-5OT1443K/root
+~												   13s   system root@LAPTOP-5OT1443K 01:36:40 PM
+❯ exit
+
+Script done on 2023-08-07 13:36:42+08:00 [COMMAND_EXIT_CODE="0"]
