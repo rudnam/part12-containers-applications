@@ -1,0 +1,90 @@
+Script started on 2023-08-08 13:20:33+08:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="146" LINES="34"]
+
+
+~/repos/part12-containers-applications/todo-app/todo-backend							 root@LAPTOP-5OT1443K 01:20:33 PM
+❯ 7;file://LAPTOP-5OT1443K/root/repos/part12-containers-applications/todo-app/todo-backend#
+~/repos/part12-containers-applications/todo-app/todo-backend main ?1				         system root@LAPTOP-5OT1443K 01:20:33 PM
+❯ docker compose -f docker-compose.dev.yml up -d
+WARN[0000] Found orphan containers ([todo-backend-app-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.
+[+] Running 0/0
+ ⠿ Container todo-backend-mongo-1  Starting												     0.0s
+[+] Running 0/1
+ ⠿ Container todo-backend-mongo-1  Starting												     0.1s
+[+] Running 0/1
+ ⠿ Container todo-backend-mongo-1  Starting												     0.2s
+[+] Running 0/1
+ ⠿ Container todo-backend-mongo-1  Starting												     0.3s
+[+] Running 0/1
+ ⠿ Container todo-backend-mongo-1  Starting												     0.4s
+[+] Running 0/1
+ ⠿ Container todo-backend-mongo-1  Starting												     0.5s
+[+] Running 1/1
+ ✔ Container todo-backend-mongo-1  Started												     0.5s
+7;file://LAPTOP-5OT1443K/root/repos/part12-containers-applications/todo-app/todo-backend
+~/repos/part12-containers-applications/todo-app/todo-backend main ?1				         system root@LAPTOP-5OT1443K 01:20:45 PM
+❯ docker exec -it todo-backend-mongo-1 mongosh -u root -p example
+Current Mongosh Log ID: 64d1d0bc03d8dcc1322c4690
+Connecting to:		mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.1
+Using MongoDB:		6.0.8
+Using Mongosh:		1.10.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+ ------
+   The server generated these startup warnings when booting
+   2023-08-08T05:20:45.337+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-08-08T05:20:46.489+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+   2023-08-08T05:20:46.489+00:00: vm.max_map_count is too low
+------
+
+test> show dbs
+admin	      100.00 KiB
+config	       84.00 KiB
+local	       72.00 KiB
+the_database   56.00 KiB
+test> use the test> use the_database
+switched to db the_database
+the_database> show collections
+todos
+the_database> db.todos.find({}_the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId("64d0a6a149a3809ec5905f2f"),
+    text: 'Write code while drinking coffee',
+    done: false
+  },
+  {
+    _id: ObjectId("64d0a6a149a3809ec5905f30"),
+    text: 'Learn about containers',
+    done: false
+  }
+]
+the_database> db.todos.insertOne({text: 'Increase the number of tools in my toolbelt', done: false})
+{
+  acknowledged: true,
+  insertedId: ObjectId("64d1d0ef03d8dcc1322c4691")
+}
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId("64d0a6a149a3809ec5905f2f"),
+    text: 'Write code while drinking coffee',
+    done: false
+  },
+  {
+    _id: ObjectId("64d0a6a149a3809ec5905f30"),
+    text: 'Learn about containers',
+    done: false
+  },
+  {
+    _id: ObjectId("64d1d0ef03d8dcc1322c4691"),
+    text: 'Increase the number of tools in my toolbelt',
+    done: false
+  }
+]
+the_database> exit
+7;file://LAPTOP-5OT1443K/root/repos/part12-containers-applications/todo-app/todo-backend
+~/repos/part12-containers-applications/todo-app/todo-backend main ?1				 1m 8s   system root@LAPTOP-5OT1443K 01:22:07 PM
+❯ exit
+
+Script done on 2023-08-08 13:22:09+08:00 [COMMAND_EXIT_CODE="0"]
