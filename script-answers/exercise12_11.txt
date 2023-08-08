@@ -1,0 +1,49 @@
+Script started on 2023-08-08 14:41:48+08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="146" LINES="34"]
+
+
+~/repos/part12-containers-applications/todo-app/todo-backend							 root@LAPTOP-5OT1443K 02:41:48 PM
+❯ 7;file://LAPTOP-5OT1443K/root/repos/part12-containers-applications/todo-app/todo-backend#
+~/repos/part12-containers-applications/todo-app/todo-backend main !2 ?1						 root@LAPTOP-5OT1443K 02:41:48 PM
+❯ docker compose -f docker-compose.dev.yml up -d
+WARN[0000] Found orphan containers ([todo-backend-app-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.
+[+] Running 0/0
+ ⠿ Container todo-backend-redis-1  Starting												     0.1s
+ ⠿ Container todo-backend-mongo-1  Starting												     0.1s
+[+] Running 0/2
+ ⠿ Container todo-backend-redis-1  Starting												     0.2s
+ ⠿ Container todo-backend-mongo-1  Starting												     0.2s
+[+] Running 0/2
+ ⠿ Container todo-backend-redis-1  Starting												     0.3s
+ ⠿ Container todo-backend-mongo-1  Starting												     0.3s
+[+] Running 0/2
+ ⠿ Container todo-backend-redis-1  Starting												     0.4s
+ ⠿ Container todo-backend-mongo-1  Starting												     0.4s
+[+] Running 0/2
+ ⠿ Container todo-backend-redis-1  Starting												     0.5s
+ ⠿ Container todo-backend-mongo-1  Starting												     0.5s
+[+] Running 0/2
+ ⠿ Container todo-backend-redis-1  Starting												     0.6s
+ ⠿ Container todo-backend-mongo-1  Starting												     0.6s
+[+] Running 0/2
+ ⠿ Container todo-backend-redis-1  Starting												     0.7s
+ ⠿ Container todo-backend-mongo-1  Starting												     0.7s
+[+] Running 2/2
+ ✔ Container todo-backend-redis-1  Started												     0.7s
+ ✔ Container todo-backend-mongo-1  Started												     0.7s
+7;file://LAPTOP-5OT1443K/root/repos/part12-containers-applications/todo-app/todo-backend
+~/repos/part12-containers-applications/todo-app/todo-backend main !2 ?1						 root@LAPTOP-5OT1443K 02:42:06 PM
+❯ docker exec -it todo-backend-redis-1 redis-cli
+127.0.0.1:6379> KEYS *
+1) "addedTodoCount"
+127.0.0.1:6379> GET addedTodoCount
+"1"
+127.0.0.1:6379> SET addedTodoCount 9001
+OK
+127.0.0.1:6379> GETDEL addedTodoCount
+"9002"
+127.0.0.1:6379> exit
+7;file://LAPTOP-5OT1443K/root/repos/part12-containers-applications/todo-app/todo-backend
+~/repos/part12-containers-applications/todo-app/todo-backend main !2 ?1					  3m 43s root@LAPTOP-5OT1443K 02:45:59 PM
+❯ exit
+
+Script done on 2023-08-08 14:46:02+08:00 [COMMAND_EXIT_CODE="0"]
